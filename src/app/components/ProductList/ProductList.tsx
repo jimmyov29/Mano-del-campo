@@ -6,7 +6,7 @@ export const ProductList = () => {
   return (
     <section className=" w-full py-6">
       <article className=" py-4">
-        <h2 className=" text-3xl font-extrabold">Productos</h2>
+        <h2 className=" text-2xl md:text-3xl font-extrabold">Productos</h2>
         <h3 className=" text-sm text-gray-400">
           ¡Descubre un mundo de sabores y productos frescos!
         </h3>
@@ -18,11 +18,7 @@ export const ProductList = () => {
             className="grid place-content-center gap-2 cursor-pointer hover:scale-105 transition ease-linear "
           >
             <div className=" shadow-md relative w-60 h-32 rounded-xl overflow-hidden  ">
-              <Image
-                src={product.imagePath}
-                alt={product.name}
-                fill
-              />
+              <Image src={product.imagePath} alt={product.name} fill />
             </div>
             <div className="py-2">
               <h3 className=" font-bold text-sm">{product.name}</h3>
