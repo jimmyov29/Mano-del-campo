@@ -1,9 +1,12 @@
 import React from "react";
 import Image from "next/image";
+import { ProductList } from "../ProductList/ProductList";
 
 export const Feed = () => {
   return (
-    <section className="p-6">
+    <div className="w-full flex justify-center">
+
+    <section className="p-10 mt-24 max-w-screen-lg">
       <article className="space-y-4">
         <h1 className="text-center font-extrabold text-5xl">
           Únete a la comunidad de consumidores que valoran la agricultura
@@ -20,6 +23,8 @@ export const Feed = () => {
           </figure>
         </div>
       </article>
+      <ProductList/>
     </section>
+    </div>
   );
 };
