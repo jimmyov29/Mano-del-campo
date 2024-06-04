@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 export const Footer = () => {
@@ -11,9 +12,12 @@ export const Footer = () => {
     <article>
         <h2 className=' font-semibold'>Servicio al cliente</h2>
         <div className=' flex flex-col items-start'>
-        <button className=' text-gray-500'> Afiliados</button>
-        <button className=' text-gray-500'> Como formar parte</button>
-
+        <Link href={"/affiliates"}>
+        <button className=' text-gray-500'> Sistema de afiliados</button>
+        </Link>
+        <Link href={"/contact-us"}>
+        <button className=' text-gray-500'> Contactanos</button>
+        </Link>
         </div>
     </article>
   </section>;

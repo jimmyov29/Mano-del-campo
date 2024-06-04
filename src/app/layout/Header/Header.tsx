@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const Header = () => {
 
@@ -16,15 +17,17 @@ export const Header = () => {
     </article>
   );
   return (
-    <div className=" w-full px-6 py-4 bg-[#aceca4] gap-4 md:gap-0 flex-col  flex shadow-lg fixed z-20">
+    <div className=" w-full px-6 py-4 bg-[#aceca4] gap-4 md:gap-0 flex-col  flex shadow-lg sticky z-20 top-0">
       <section className="flex items-center justify-between">
         <article className=" flex gap-3 items-center ">
+          <Link href={"/"}>
           <Image
             src={"/assets/logomdc.png"}
             alt={"logo"}
             width={80}
             height={80}
           ></Image>
+          </Link>
           <h1 className=" hidden lg:block text-center uppercase font-extrabold text-3xl">
             la mano del campo
           </h1>

@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import { ProductList } from "../ProductList/ProductList";
+import ProductList from "../ProductList/ProductList";
 
-export const Feed = () => {
+export default function Hero(){
   return (
     <div className="w-full flex justify-center">
-      <section className="p-10 mt-36 md:mt-24 max-w-screen-lg">
+      <section className="p-10  max-w-screen-lg">
         <article className="space-y-4">
           <h1 className="text-center font-extrabold text-2xl md:text-5xl">
             Únete a la comunidad de consumidores que valoran la agricultura

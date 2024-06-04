@@ -2,11 +2,11 @@ import React from 'react'
 import { Products } from './../../../utils/data'
 import Image from "next/image";
 
-export const ProductList = () => {
+function ProductList(){
   return (
     <section className=" w-full py-6">
       <article className=" py-4">
-        <h2 className=" text-2xl md:text-3xl font-extrabold">Productos</h2>
+        <h2 className=" text-2xl md:text-3xl  font-extrabold">Productos</h2>
         <h3 className=" text-sm text-gray-400">
           ¡Descubre un mundo de sabores y productos frescos!
         </h3>
@@ -33,3 +33,6 @@ export const ProductList = () => {
     </section>
   );
 }
+
+
+export default ProductList
