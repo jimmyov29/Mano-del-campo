@@ -4,14 +4,14 @@ export default function Affiliates() {
   let steps = [
     {
       id: 1,
-      label: "Unete",
+      label: "ÚNete",
       description:
-        "Dile a tus clientes lo rapido que se pueden unir y convertirse en afiliados",
+        "Dile a tus clientes lo rÁpido que se pueden unir y convertirse en afiliados.",
     },
     {
       id: 2,
       label: "Promueve",
-      description: "Muestrales que tan facil pueden agregar afiliados",
+      description: "Muestrales que tan fácil pueden agregar afiliados.",
     },
     {
       id: 3,
@@ -22,29 +22,27 @@ export default function Affiliates() {
   return (
     // <div className="h-screen">
     <div>
-      <section className=" w-full p-10 bg-slate-300">
-        {/* <picture className=" "> */}
-        <Image
-        //   src={"/./public/assets/banner/banner1.webp"}
-          src={"/public/assets/banner/afiliados.jpg"}
-          alt="Banner"
-          width={100}
-          height={100}
-        //   fill
-        />
-      {/* </picture> */}
-
-        <article className=" grid gap-6">
-          <h2 className=" text-3xl max-w-[30rem] font-bold">
-            Unete a nuestro sistema de afiliados y obten beneficios!
+      <section className="  relative w-full h-auto p-10 ">
+        <div className="absolute inset-0 z-0 w-full h-full">
+          <Image
+            src="/assets/banner/banner2.webp"
+            alt="Banner"
+            layout="fill"
+            objectFit="cover"
+            className="w-full h-full object-cover blur-sm bg-black opacity-110 mix-blend-multiply "
+          />
+        </div>
+        
+        <article className=" relative z-10 grid gap-6 ">
+          <h2 className="text-3xl max-w-[30rem] font-bold text-white">
+            Únete a nuestro sistema de afiliados y obtén beneficios!
           </h2>
-          <h3 className="text-lg max-w-[30rem] font-normal text-gray-500">
-            Al afiliar mas personas obtienes un bono de L.100.00 por cada
-            afiliado nuevo
+          <h3 className="text-lg max-w-[30rem] font-normal text-gray-100">
+            Al afiliar más personas obtienes un bono de L.100.00 por cada afiliado nuevo.
           </h3>
-          <Link href={"/contact-us"}>
-            <button className=" py-3 px-4 rounded-2xl bg-gray-400 shadow-xl">
-              Convierte en un afiliado
+          <Link href="/contact-us" className=" inline-block">
+            <button className="py-3 px-4 font-medium rounded-2xl bg-gray-400 shadow-xl hover:bg-gray-200 transition ease-in-out duration-300">
+              Conviértete en un afiliado
             </button>
           </Link>
         </article>
@@ -62,8 +60,8 @@ export default function Affiliates() {
         {steps.map((step, i) => (
             <section key={i} className=" max-w-[15rem] grid place-items-center gap-4">
               <article className=" flex">
-                <div className=" bg-gray-200 rounded-full p-8">
-                  <p className=" text-gray-400 font-semibold text-3xl">
+                <div className=" bg-gray-200 rounded-full p-8 hover:shadow-lg transition ease-in-out">
+                  <p className=" text-gray-400 font-semibold text-3xl ">
                     0{step.id}
                   </p>
                 </div>

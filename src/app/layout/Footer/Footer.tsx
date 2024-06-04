@@ -16,7 +16,7 @@ export const Footer = () => {
         <button className=' text-gray-500'> Sistema de afiliados</button>
         </Link>
         <Link href={"/contact-us"}>
-        <button className=' text-gray-500'> Contactanos</button>
+        <button className=' text-gray-500'> Contáctanos</button>
         </Link>
         </div>
     </article>

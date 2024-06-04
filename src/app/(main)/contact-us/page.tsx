@@ -1,9 +1,9 @@
 export default function () {
   return (
     <section className="flex justify-center py-10">
-      <form action="" className=" w-full max-w-[40rem] grid gap-6 rounded-2xl bg-gray-100 p-10">
+      <form action="" id="contactForm" className=" w-full max-w-[40rem] grid gap-6 rounded-2xl bg-gray-100 p-10">
         <h2 className=" text-center uppercase font-bold text-4xl">
-          ¡Contactanos!
+          ¡Contáctanos!
         </h2>
         <article className=" px-10 grid gap-4">
           <fieldset className="grid gap-1 ">
@@ -30,7 +30,7 @@ export default function () {
           </fieldset>
           <fieldset className="grid gap-1">
             <label htmlFor="" className=" text-xl font-medium">
-              Correo electronico<span className=" text-red-600">*</span>
+              Correo electrónico<span className=" text-red-600">*</span>
             </label>
             <input
               type="text"
@@ -41,7 +41,7 @@ export default function () {
           </fieldset>
           <fieldset className="grid gap-1">
             <label htmlFor="" className=" text-xl font-medium">
-              Telefono <span className=" text-red-600">*</span>
+              Teléfono <span className=" text-red-600">*</span>
             </label>
             <input
               type="numeric"
