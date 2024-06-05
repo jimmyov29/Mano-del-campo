@@ -36,7 +36,9 @@ export const Header = () => {
         <article className="hidden md:block">{searchInput}</article>
 
         <article className="flex gap-2">
+        <Link href={"/"}> 
           <button className="  px-4 py-2 rounded-lg">Inicio</button>
+        </Link>
           <button className=" bg-black px-4 py-2 text-[#aceca4] rounded-lg">
             Perfil
           </button>
