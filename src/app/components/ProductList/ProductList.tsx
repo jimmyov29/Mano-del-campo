@@ -40,7 +40,7 @@ function ProductList() {
             key={i}
             className="grid place-content-center gap-2 cursor-pointer hover:scale-105 transition ease-linear "
           >
-            <div className=" shadow-md relative w-60 h-32 rounded-xl overflow-hidden  ">
+            <div className=" shadow-md relative w-60 h-32 rounded-xl overflow-hidden">
               <Image 
               src={product.imagePath} 
               alt={product.name} 

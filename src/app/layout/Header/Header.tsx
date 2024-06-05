@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Header = () => {
 
@@ -35,13 +37,16 @@ export const Header = () => {
 
         <article className="hidden md:block">{searchInput}</article>
 
-        <article className="flex gap-2">
+        <article className="flex gap-2 items-center">
         <Link href={"/"}> 
-          <button className="  px-4 py-2 rounded-lg">Inicio</button>
+          <button className=" transition ease-in-out hover:scale-105 px-4 py-2 rounded-lg">Inicio</button>
         </Link>
-          <button className=" bg-black px-4 py-2 text-[#aceca4] rounded-lg">
+          {/* <button className=" bg-black px-4 py-2 text-[#aceca4] rounded-lg">
             Perfil
-          </button>
+          </button> */}
+          <Link href={"/checkout"}>
+          <FontAwesomeIcon className="hover:scale-105 transition ease-in-out w-6" icon={faCartShopping} />
+          </Link>
         </article>
       </section>
       <article className="flex w-full md:hidden justify-center">{searchInput}</article>

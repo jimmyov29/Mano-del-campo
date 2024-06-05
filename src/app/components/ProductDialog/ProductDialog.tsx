@@ -1,25 +1,24 @@
-import { Product } from '@/app/interfaces/Products.types';
-import { Dialog, DialogPanel} from '@headlessui/react'
-import { useState } from 'react';
-import Image from "next/image"
+import { Product } from "@/app/interfaces/Products.types";
+import { Dialog, DialogPanel } from "@headlessui/react";
+import { useState } from "react";
+import Image from "next/image";
 
 interface ProductDialogProps {
-    isOpen: boolean;
-    onClose: () => void;
-    product: Product | undefined;
+  isOpen: boolean;
+  onClose: () => void;
+  product: Product | undefined;
+}
+
+function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
+  const [count, setCount] = useState(1);
+
+  function addItem() {
+    setCount(count + 1);
   }
 
-
-function ProductDialog({isOpen, onClose, product}:ProductDialogProps) {
-  const [count, setCount] = useState(1)
-
-  function addItem(){
-    setCount(count + 1)
-  }
-
-  function removeItem(){
-    if(count>0){
-        setCount(count - 1)
+  function removeItem() {
+    if (count > 1) {
+      setCount(count - 1);
     }
   }
 
@@ -35,53 +34,71 @@ function ProductDialog({isOpen, onClose, product}:ProductDialogProps) {
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
           {/* The actual dialog panel  */}
           <DialogPanel className="max-w-lg space-y-4 bg-white p-12 relative rounded-2xl">
-            <button  onClick={()=>{
-              onClose()
-              setCount(1)
-                
-            }} className=' text-gray-400 font-extrabold text-2xl absolute right-3 top-1 p-3'>x</button>
-            <section className=' grid grid-cols-1 md:grid-cols-2'>
-                <article>
-                  {product!== undefined &&(
-                      <picture className=' h-full flex justify-center items-center'>
-                          <Image 
-                          src={product.imagePath} 
-                          alt={product.name}
-                          width={200}
-                          height={200}
-                          />                  
-                      </picture>
-
-                  )}
-                </article>
-                <article className=' grid gap-3'>
-                    <h2 className=' text-sm font-semibold text-gray-400'>{product?.companyName}</h2>
-                    <h2 className=' text-2xl font-semibold'> {product?.name}</h2>
-                    <h3 className=' text-lg font-medium'>L.{product?.price.toFixed(2)}</h3>
-                    <p className=' text-gray-600 text-sm'>{product?.description}</p>
-                    <div>
-                        <p className=' text-sm  text-gray-400'>Cantidad</p> 
-                    <div className=' p-2 flex  gap-5 items-center '>
-                        <button onClick={removeItem} className=' font-extrabold text-2xl'>-</button>
-                        <p className=' text-xl'>{count}</p>
-                        <button onClick={addItem} className=' font-extrabold text-2xl'>+</button>
-                    </div>
-
-                    </div>
-                    <button onClick={()=>{
-                      setCount(1)
-                      onClose()
-                    }} className="py-3 px-4 font-semibold rounded-3xl bg-gray-400  hover:bg-gray-300 hover:font-bold transition ease-in-out duration-300">
-              Agregar al carrito
+            <button
+              onClick={() => {
+                onClose();
+                setCount(1);
+              }}
+              className=" text-gray-400 font-extrabold text-2xl absolute right-3 top-1 p-3"
+            >
+              x
             </button>
-                </article>
+            <section className=" grid grid-cols-1 md:grid-cols-2">
+              <article>
+                {product !== undefined && (
+                  <picture className=" h-full flex justify-center items-center">
+                    <Image
+                      src={product.imagePath}
+                      alt={product.name}
+                      width={200}
+                      height={200}
+                    />
+                  </picture>
+                )}
+              </article>
+              <article className=" grid gap-3">
+                <h2 className=" text-sm font-semibold text-gray-400">
+                  {product?.companyName}
+                </h2>
+                <h2 className=" text-2xl font-semibold"> {product?.name}</h2>
+                <h3 className=" text-lg font-medium">
+                  L.{product?.price.toFixed(2)}
+                </h3>
+                <p className=" text-gray-600 text-sm">{product?.description}</p>
+                <div>
+                  <p className=" text-sm  text-gray-400">Cantidad</p>
+                  <div className=" p-2 flex  gap-5 items-center ">
+                    <button
+                      onClick={removeItem}
+                      className=" font-extrabold text-2xl border-2 rounded-2xl px-3 py-0.5 bg-gray-50"
+                    >
+                      -
+                    </button>
+                    <p className=" text-xl">{count}</p>
+                    <button
+                      onClick={addItem}
+                      className=" font-extrabold text-2xl border-2 rounded-2xl px-3 py-0.5 bg-gray-50"
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    setCount(1);
+                    onClose();
+                  }}
+                  className="py-3 px-4 font-semibold rounded-3xl bg-gray-400  hover:bg-gray-300 hover:font-bold transition ease-in-out duration-300"
+                >
+                  Agregar al carrito
+                </button>
+              </article>
             </section>
-
           </DialogPanel>
         </div>
       </Dialog>
     </>
-  )
+  );
 }
 
-export default ProductDialog
+export default ProductDialog;
