@@ -1,4 +1,4 @@
-export default function () {
+export default function Contact() {
   return (
     <section className="flex justify-center py-10">
       <form action="" id="contactForm" className=" w-full max-w-[40rem] grid gap-6 rounded-2xl bg-gray-100 p-10">

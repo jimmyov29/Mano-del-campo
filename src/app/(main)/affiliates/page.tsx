@@ -4,7 +4,7 @@ export default function Affiliates() {
   let steps = [
     {
       id: 1,
-      label: "ÚNete",
+      label: "Únete",
       description:
         "Dile a tus clientes lo rÁpido que se pueden unir y convertirse en afiliados.",
     },
@@ -41,7 +41,7 @@ export default function Affiliates() {
             Al afiliar más personas obtienes un bono de L.100.00 por cada afiliado nuevo.
           </h3>
           <Link href="/contact-us" className=" inline-block">
-            <button className="py-3 px-4 font-medium rounded-2xl bg-gray-400 shadow-xl hover:bg-gray-200 transition ease-in-out duration-300">
+            <button className="py-3 px-4 font-semibold rounded-2xl bg-gray-400 shadow-xl hover:bg-gray-300 hover:font-bold transition ease-in-out duration-300">
               Conviértete en un afiliado
             </button>
           </Link>

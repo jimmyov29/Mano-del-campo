@@ -1,11 +1,18 @@
+import { faFacebookF, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
 import React from 'react'
 
 export const Footer = () => {
   return <section className=" bg-[#e8e4e4] p-4 flex justify-evenly">
-    <article>
+    <article className=' space-y-2'>
         <p>La mano del campo</p>
-        <figure>iconos de redes</figure>
+        <figure className=' flex gap-3 items-center'>
+        <FontAwesomeIcon className='w-5 h-5 text-gray-500' icon={faInstagram} />
+        <FontAwesomeIcon className='w-5 h-5 text-gray-500' icon={faFacebookF} />
+        <FontAwesomeIcon className='w-5 h-5 text-gray-500' icon={faYoutube} />
+        <FontAwesomeIcon className='w-5 h-5 text-gray-500' icon={faLinkedin} />
+        </figure>
 
     </article>
 

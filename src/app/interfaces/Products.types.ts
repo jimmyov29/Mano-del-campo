@@ -3,4 +3,5 @@ export interface Product{
     companyName: string,
     imagePath: string,
     price: number,
+    description: string
 }

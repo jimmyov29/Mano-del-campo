@@ -1,8 +1,28 @@
-import React from 'react'
-import { Products } from './../../../utils/data'
+"use client";
+import React, { useState } from "react";
+import { Products } from "./../../../utils/data";
 import Image from "next/image";
+import ProductDialog from "../ProductDialog/ProductDialog";
+import { Product } from "@/app/interfaces/Products.types";
 
-function ProductList(){
+function ProductList() {
+  const [showDialog, setShowDialog] = useState<boolean>(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product>();
+
+  function openDialog() {
+    setShowDialog(true);
+  }
+
+  function closeDialog() {
+    setShowDialog(false);
+  }
+
+  function onProductSeleted(product: Product) {
+    setSelectedProduct(product);
+    openDialog();
+  }
+
+
   return (
     <section className=" w-full py-6">
       <article className=" py-4">
@@ -14,6 +34,9 @@ function ProductList(){
       <article className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {Products.map((product, i) => (
           <figure
+            onClick={() => {
+              onProductSeleted(product);
+            }}
             key={i}
             className="grid place-content-center gap-2 cursor-pointer hover:scale-105 transition ease-linear "
           >
@@ -30,9 +53,12 @@ function ProductList(){
           </figure>
         ))}
       </article>
+      <ProductDialog 
+      isOpen={showDialog} 
+      onClose={closeDialog}
+      product={selectedProduct} />
     </section>
   );
 }
 
-
-export default ProductList
+export default ProductList;
