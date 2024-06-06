@@ -30,10 +30,10 @@ export const Products:Product[] = [
         description: "Descubre la versatilidad de la yuca de Don Pancho. Esta raíz, rica en carbohidratos, es ideal para preparar desde frituras crujientes hasta suculentas sopas y guisos tradicionales."
       },
       {
-        name: "Papa",
-        companyName: "Angie",
+        name: "Papa por unidad",
+        companyName: "Las papas de Angie",
         imagePath: "/assets/products/papa.png",
-        price: 14,
+        price: 10,
         description: "Experimenta la suavidad y el sabor auténtico de las papas de Angie. Perfectas para hacer puré, freír o incluir en tus guisos favoritos, son un básico que no puede faltar en tu cocina."
       },
       {
@@ -51,7 +51,7 @@ export const Products:Product[] = [
         description: "Disfruta del sabor cremoso y la textura suave del queso de la finca. Perfecto para acompañar tus comidas, agregar a tus recetas o disfrutar solo."
       },
       {
-        name: "Huevos 30uni",
+        name: "Huevos 30 unidades",
         companyName: "Huevos el pollón",
         imagePath: "/assets/products/huevos.png",
         price: 140,

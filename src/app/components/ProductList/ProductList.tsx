@@ -25,13 +25,13 @@ function ProductList() {
 
   return (
     <section className=" w-full py-6">
-      <article className=" py-4">
+      <article className=" pt-4 pb-10">
         <h2 className=" text-2xl md:text-3xl  font-extrabold">Productos</h2>
         <h3 className=" text-sm text-gray-400">
           ¡Descubre un mundo de sabores y productos frescos!
         </h3>
       </article>
-      <article className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <article className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-4">
         {Products.map((product, i) => (
           <figure
             onClick={() => {

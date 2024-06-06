@@ -31,9 +31,9 @@ function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
         <div className="fixed inset-0 bg-black opacity-60" aria-hidden="true" />
 
         {/* Full-screen container to center the panel */}
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+        <div className="fixed inset-0 flex w-screen items-end md:items-center justify-center md:p-4">
           {/* The actual dialog panel  */}
-          <DialogPanel className="max-w-lg space-y-4 bg-white p-12 relative rounded-2xl">
+          <DialogPanel className="max-w-xl space-y-4 bg-white p-12 relative rounded-2xl">
             <button
               onClick={() => {
                 onClose();
@@ -50,8 +50,8 @@ function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
                     <Image
                       src={product.imagePath}
                       alt={product.name}
-                      width={200}
-                      height={200}
+                      width={250}
+                      height={250}
                     />
                   </picture>
                 )}
