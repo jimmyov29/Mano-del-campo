@@ -2,6 +2,7 @@ import { Product } from "@/app/interfaces/Products.types";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { useState } from "react";
 import Image from "next/image";
+import { useCheckoutStore } from "@/app/store/useCheckoutStore";
 
 interface ProductDialogProps {
   isOpen: boolean;
@@ -10,15 +11,27 @@ interface ProductDialogProps {
 }
 
 function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
-  const [count, setCount] = useState(1);
+  const [quantity, setQuantity] = useState(1);
+  const {
+    addProductToCart,
+    itemsCard,
+    decrementProductQty,
+    incrementProductQty,
+  } = useCheckoutStore();
 
   function addItem() {
-    setCount(count + 1);
+    setQuantity(quantity + 1);
   }
 
   function removeItem() {
-    if (count > 1) {
-      setCount(count - 1);
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  }
+
+  function resetCounter() {
+    if (quantity > 1) {
+      setQuantity(1);
     }
   }
 
@@ -37,7 +50,7 @@ function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
             <button
               onClick={() => {
                 onClose();
-                setCount(1);
+                setQuantity(1);
               }}
               className=" text-gray-400 font-extrabold text-2xl absolute right-3 top-1 p-3"
             >
@@ -68,30 +81,44 @@ function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
                 <div>
                   <p className=" text-sm  text-gray-400">Cantidad</p>
                   <div className=" p-2 flex  gap-5 items-center ">
-                    <button
-                      onClick={removeItem}
-                      className=" font-extrabold text-2xl border-2 rounded-2xl px-3 py-0.5 bg-gray-50"
-                    >
-                      -
-                    </button>
-                    <p className=" text-xl">{count}</p>
-                    <button
-                      onClick={addItem}
-                      className=" font-extrabold text-2xl border-2 rounded-2xl px-3 py-0.5 bg-gray-50"
-                    >
-                      +
-                    </button>
+                    {product !== undefined && (
+                      <button
+                        onClick={() => {
+                          removeItem();
+                          decrementProductQty({ ...product, qty: quantity });
+                        }}
+                        className=" font-extrabold text-2xl border-2 rounded-2xl px-3 py-0.5 bg-gray-50"
+                      >
+                        -
+                      </button>
+                    )}
+                    <p className=" text-xl">{quantity}</p>
+                    {product !== undefined && (
+                      <button
+                        onClick={() => {
+                          addItem();
+                          incrementProductQty({ ...product, qty: quantity });
+                        }}
+                        className=" font-extrabold text-2xl border-2 rounded-2xl px-3 py-0.5 bg-gray-50"
+                      >
+                        +
+                      </button>
+                    )}
                   </div>
                 </div>
-                <button
-                  onClick={() => {
-                    setCount(1);
-                    onClose();
-                  }}
-                  className="py-3 px-4 font-semibold rounded-3xl bg-gray-400  hover:bg-gray-300 hover:font-bold transition ease-in-out duration-300"
-                >
-                  Agregar al carrito
-                </button>
+                {product !== undefined && (
+                  <button
+                    onClick={() => {
+                      setQuantity(1);
+                      addProductToCart({ ...product, qty: quantity });
+                      onClose();
+                      resetCounter()
+                    }}
+                    className="py-3 px-4 font-semibold rounded-3xl bg-gray-400  hover:bg-gray-300 hover:font-bold transition ease-in-out duration-300"
+                  >
+                    Agregar al carrito
+                  </button>
+                )}
               </article>
             </section>
           </DialogPanel>

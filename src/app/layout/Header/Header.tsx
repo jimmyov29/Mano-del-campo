@@ -1,10 +1,13 @@
-import React from "react";
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useCheckoutStore } from "@/app/store/useCheckoutStore";
 
 export const Header = () => {
+
+  const {itemsAdded} = useCheckoutStore()
 
   const searchInput = (
     <article className="flex gap-2">
@@ -39,12 +42,20 @@ export const Header = () => {
 
         <article className="flex gap-2 items-center">
         <Link href={"/"}> 
-          <button className=" transition ease-in-out hover:scale-105 px-4 py-2 rounded-lg">Inicio</button>
+          <button className=" transition ease-in-out hover:scale-105 px-4 py-2 rounded-lg font-semibold">Inicio</button>
         </Link>
           {/* <button className=" bg-black px-4 py-2 text-[#aceca4] rounded-lg">
             Perfil
           </button> */}
-          <Link href={"/checkout"}>
+          <Link href={"/checkout"} className="relative">
+            {(itemsAdded >= 0 &&(
+              <div className="absolute border-2 border-[#aceca4] bg-yellow-300 rounded-full px-1 -mt-[1.1rem] -ml-1 "> 
+              <p className="text-white font-bold text-sm">
+              {itemsAdded}
+
+              </p>
+              </div>
+            ))}
           <FontAwesomeIcon className="hover:scale-105 transition ease-in-out w-6" icon={faCartShopping} />
           </Link>
         </article>
