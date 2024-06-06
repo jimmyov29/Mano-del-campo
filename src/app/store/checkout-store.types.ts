@@ -11,4 +11,5 @@ export interface Store{
   calculateSubTotal: () => number
   calculateISV: () => number
   calculateTotal: () => number
+  cleanCart: () => void
   };

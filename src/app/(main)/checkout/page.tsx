@@ -1,17 +1,29 @@
 "use client";
 import CartItem from "@/app/components/CartItem/Cartitem";
+import SuccessMessage from "@/app/components/SuccessMessage/SuccessMessage";
 import { ProductsCart } from "@/app/interfaces";
 import { useCheckoutStore } from "@/app/store/useCheckoutStore";
+import { useState } from "react";
 
 function Checkout() {
+  const [showSuccessMessage, setShowSuccessMessage] = useState<boolean>(false);
   const {
     itemsAdded,
     itemsCard,
     calculateTotal,
     calculateSubTotal,
     calculateISV,
-    actualQuantityOfProducts
+    actualQuantityOfProducts,
+    cleanCart
   } = useCheckoutStore();
+
+  function openDialog() {
+    setShowSuccessMessage(true);
+  }
+
+  function closeDialog() {
+    setShowSuccessMessage(false);
+  }
 
   return (
     <div className=" w-full flex justify-center items-start">
@@ -55,14 +67,25 @@ function Checkout() {
                     L.{calculateTotal()}
                   </h3>
                 </article>
-                <button className=" w-full  bg-black px-4 py-2 text-white rounded-lg hover:scale-105 transition ease-in">
+                
+                <button onClick={()=>{
+                  if(itemsAdded>0){
+                    openDialog()
+                    cleanCart()
+                  }
+                }} className=" w-full  bg-black px-4 py-2 text-white rounded-lg hover:scale-105 transition ease-in">
                   Pagar
                 </button>
+                
               </div>
             </div>
           </section>
         </div>
       </div>
+      <SuccessMessage 
+      isOpen={showSuccessMessage} 
+      onClose={closeDialog}
+       />
     </div>
   );
 }

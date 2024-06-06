@@ -105,4 +105,10 @@ export const useCheckoutStore = create<Store>()((set, getState) => ({
     const isv = getState().calculateISV();
     return subtotal + isv;
   },
+  cleanCart: () => {
+    set({
+      itemsAdded: 0,
+      itemsCard: [],
+    })
+  },
 }));
