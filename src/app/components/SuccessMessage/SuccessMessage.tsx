@@ -25,7 +25,7 @@ function SuccessMessage({ isOpen, onClose}: SuccessMessageProps) {
         <div className="fixed inset-0 bg-black opacity-60" aria-hidden="true" />
 
         {/* Full-screen container to center the panel */}
-        <div className="fixed inset-0 flex w-screen items-end md:items-center justify-center md:p-4">
+        <div className="fixed inset-0 flex w-screen items-center justify-center md:p-4">
           {/* The actual dialog panel  */}
           <DialogPanel className="max-w-xl space-y-4 bg-white p-12 relative rounded-2xl">
             <section className=" grid grid-cols-1 place-items-center gap-8">
