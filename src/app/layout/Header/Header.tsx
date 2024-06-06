@@ -48,7 +48,7 @@ export const Header = () => {
             Perfil
           </button> */}
           <Link href={"/checkout"} className="relative">
-            {(itemsAdded >= 0 &&(
+            {(itemsAdded > 0 &&(
               <div className="absolute border-2 border-[#aceca4] bg-yellow-300 rounded-full px-1 -mt-[1.1rem] -ml-1 "> 
               <p className="text-white font-bold text-sm">
               {itemsAdded}
