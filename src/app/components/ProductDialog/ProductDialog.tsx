@@ -79,8 +79,8 @@ function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
                 </h3>
                 <p className=" text-gray-600 text-sm">{product?.description}</p>
                 <div>
-                  <p className=" text-sm  text-gray-400">Cantidad</p>
-                  <div className=" p-2 flex  gap-5 items-center ">
+                  {/* <p className=" text-sm  text-gray-400">Cantidad</p> */}
+                  {/* <div className=" p-2 flex  gap-5 items-center ">
                     {product !== undefined && (
                       <button
                         onClick={() => {
@@ -104,7 +104,7 @@ function ProductDialog({ isOpen, onClose, product }: ProductDialogProps) {
                         +
                       </button>
                     )}
-                  </div>
+                  </div> */}
                 </div>
                 {product !== undefined && (
                   <button

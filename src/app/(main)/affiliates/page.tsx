@@ -6,7 +6,7 @@ export default function Affiliates() {
       id: 1,
       label: "Únete",
       description:
-        "Dile a tus clientes lo rÁpido que se pueden unir y convertirse en afiliados.",
+        "Dile a tus clientes lo rápido que se pueden unir y convertirse en afiliados.",
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ export default function Affiliates() {
     {
       id: 3,
       label: "Gana dinero",
-      description: "Al agregar afiliados estaras ganando dinero extra!",
+      description: "Al agregar afiliados estarás ganando dinero extra!",
     },
   ];
   return (
@@ -29,19 +29,19 @@ export default function Affiliates() {
             alt="Banner"
             layout="fill"
             objectFit="cover"
-            className="w-full h-full object-cover blur-sm bg-black opacity-110 mix-blend-multiply "
+            className="w-full h-full object-cover blur-sm bg-black opacity-90 mix-blend-multiply "
           />
         </div>
         
         <article className=" relative z-10 grid gap-6 ">
-          <h2 className="text-3xl max-w-[30rem] font-bold text-white">
+          <h2 className="text-3xl max-w-[30rem] font-bold text-[#fff]">
             Únete a nuestro sistema de afiliados y obtén beneficios!
           </h2>
-          <h3 className="text-lg max-w-[30rem] font-normal text-gray-100">
+          <h3 className="text-lg max-w-[30rem] font-normal text-[#fff]">
             Al afiliar más personas obtienes un bono de L.100.00 por cada afiliado nuevo.
           </h3>
           <Link href="/contact-us" className=" inline-block">
-            <button className="py-3 px-4 font-semibold rounded-2xl bg-gray-400 shadow-xl hover:bg-gray-300 hover:font-bold transition ease-in-out duration-300">
+            <button className="py-3 px-4 font-semibold rounded-2xl text-white hover:text-gray-600 bg-gray-400 shadow-xl hover:bg-gray-300 hover:font-bold transition ease-in-out duration-300">
               Conviértete en un afiliado
             </button>
           </Link>
@@ -51,8 +51,8 @@ export default function Affiliates() {
         <article className=" w-full flex flex-col  gap-4 ">
           <h2 className=" text-center text-4xl font-bold">Como funciona?</h2>
           <h3 className=" text-center text-lg font-medium text-gray-500">
-            Genera confinaza con tus clientes demostrandoles que el proceso es
-            facil, rapido y lucrativo
+            Genera confianza con tus clientes demostrandoles que el proceso es
+            fácil, rápido y lucrativo
           </h3>
         </article>
         <div  className=" w-full flex flex-col md:flex-row  items-center

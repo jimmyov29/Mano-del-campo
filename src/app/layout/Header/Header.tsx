@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { faCartShopping, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useCheckoutStore } from "@/app/store/useCheckoutStore";
 
@@ -10,13 +10,14 @@ export const Header = () => {
   const {itemsAdded} = useCheckoutStore()
 
   const searchInput = (
-    <article className="flex gap-2">
+    <article className="flex gap-2 relative">
       <input
         className=" rounded-2xl px-4 py-2 outline-none"
         type="text"
         placeholder="Busca tu producto aqui"
       />
-      <button className=" bg-black px-4 py-2 text-white rounded-lg">
+      <FontAwesomeIcon className=" block absolute right-2 top-3 md:hidden text-gray-500 cursor-pointer" icon={faMagnifyingGlass} />
+      <button className=" hidden md:block bg-black px-4 py-2 text-white rounded-lg">
         Buscar
       </button>
     </article>

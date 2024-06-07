@@ -1,7 +1,11 @@
 export default function Contact() {
   return (
     <section className="flex justify-center py-10">
-      <form action="" id="contactForm" className=" w-full max-w-[40rem] grid gap-6 rounded-2xl bg-gray-100 p-10">
+      <form
+        action=""
+        id="contactForm"
+        className=" w-full max-w-[40rem] grid gap-6 rounded-2xl bg-gray-100 p-10"
+      >
         <h2 className=" text-center uppercase font-bold text-4xl">
           ¡Contáctanos!
         </h2>
@@ -52,7 +56,12 @@ export default function Contact() {
           </fieldset>
         </article>
         <article className=" flex justify-center">
-        <button type="submit" className="border rounded-lg px-8 py-3 bg-gray-300  hover:bg-gray-400 hover:text-white transition ease-in-out">Enviar</button>
+          <button
+            type="submit"
+            className="border rounded-lg px-8 py-3 bg-gray-300  hover:bg-gray-400 hover:text-white transition ease-in-out"
+          >
+            Enviar
+          </button>
         </article>
       </form>
     </section>
